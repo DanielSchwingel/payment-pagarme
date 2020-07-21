@@ -1,0 +1,23 @@
+p {
+    font-family: 'Ubuntu';
+    font-size: 17px;
+    font-weight: 500;
+    color: #070817;
+}
+
+table {
+    width: 100%;
+    font-family: 'Ubuntu';
+}
+
+thead {
+    color: #070817;
+    background-color: #65a300;
+}
+tbody {
+    text-align: center;
+}
+tfoot{
+    text-align: center;
+    background-color: red;
+}

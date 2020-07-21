@@ -1,0 +1,14 @@
+.container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-header img {
+    margin-left: 15px;
+}
+
+h1 {
+    font-family: 'Ubuntu';
+}

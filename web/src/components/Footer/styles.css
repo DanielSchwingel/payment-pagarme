@@ -1,0 +1,11 @@
+.container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.container-footer a {
+    margin: 5px;
+}
+

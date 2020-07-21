@@ -1,0 +1,18 @@
+.button {
+    font-family: 'Ubuntu';
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #070817;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
+.button svg {
+    margin-right: 15px;
+}
+
+.button:hover {
+    opacity: 0.8;
+}

@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { FaChartBar, FaRegCreditCard } from 'react-icons/fa'
+import { Link }from 'react-router-dom';
 
-import api_payment from '../../services/api_payment';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import './styles.css';
 
-const Home = () => {
-    const [transactions, setTransactions] = useState([]);
-
-    async function getPayments(){
-        const response = await api_payment.get('/');
-        setTransactions(response.data);
-    }
-
-    useEffect(()=>{
-        getPayments()
-    },[]);
+const Home = ( ) => {
     return (
         <div className='box'>
-            <h1>Pagamentos</h1>
-            <p>Lista de pagamentos efetuados:</p>
+            <Header title='Integração com o'/>
+            <div className='card-panel'>
+                <Link className='card' to='/vendas'>
+                    <FaChartBar size={28} color='#FFF'/> 
+                    <p>TRANSAÇÕES</p>       
+                </Link>
+                <Link className='card' to='/vender'>
+                    <FaRegCreditCard size={28} color='#FFF'/>  
+                    <p>VENDER</p>      
+                </Link>
+            </div>
+            <Footer/>
         </div>
     )
 }
