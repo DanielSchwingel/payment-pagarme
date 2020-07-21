@@ -5,8 +5,6 @@ require('dotenv').config();
 const routes = express.Router();
 
 routes.get('/', (req, res)=> {
-    // res.send('Hello world!');
-    // pagarme.client.connect({ email: 'daniel.schwingel@masterdatatec.com.br', password: 'danielmasterdata' })
     pagarme.client.connect({ api_key: process.env.PAGARME_API_KEY_TEST })
         .then(client => client.transactions.all())
         .then(transactions => res.json(transactions))
