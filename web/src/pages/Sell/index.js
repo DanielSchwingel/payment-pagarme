@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
@@ -12,10 +13,23 @@ const Sell = ( ) => {
     const [cardNumber, setCardNumber] = useState('');
     const [expirationDate, setExpirationDate] = useState('');
     const [codeVerification, setCodeVerification] = useState('');
+    const history = useHistory();
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const reponse = await api_payment.post('/',  )
+        const data = {
+            name,
+            cardNumber,
+            expirationDate,
+            codeVerification
+        }
+        try {
+            await api_payment.post('/', data);    
+            history.push('/');
+        } catch (error) {
+            alert(`Não foi possível efetuar pagamento: ${error}`)
+        }
+        
         
     }
 

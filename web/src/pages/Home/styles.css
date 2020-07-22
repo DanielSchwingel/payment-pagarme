@@ -19,7 +19,6 @@
 }
 
 .card:hover {
-    /* opacity: .8; */
     background-color: #070817;
 }
 .card p {
