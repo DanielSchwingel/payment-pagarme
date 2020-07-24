@@ -24,7 +24,7 @@ const Sell = ( ) => {
             codeVerification
         }
         try {
-            await api_payment.post('/', data);    
+            console.log(await api_payment.post('/', data));    
             history.push('/');
         } catch (error) {
             alert(`Não foi possível efetuar pagamento: ${error}`)
