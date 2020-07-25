@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaChartBar, FaRegCreditCard } from 'react-icons/fa'
+import { FaChartBar, FaRegCreditCard, FaUsers } from 'react-icons/fa'
 import { Link }from 'react-router-dom';
 
 import Header from '../../components/Header';
@@ -18,6 +18,10 @@ const Home = ( ) => {
                 <Link className='card' to='/vender'>
                     <FaRegCreditCard size={28} color='#FFF'/>  
                     <p>VENDER</p>      
+                </Link>
+                <Link className='card' to='/clientes'>
+                    <FaUsers size={28} color='#FFF'/>  
+                    <p>Clientes</p>      
                 </Link>
             </div>
             <Footer/>

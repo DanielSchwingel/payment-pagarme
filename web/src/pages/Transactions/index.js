@@ -12,7 +12,7 @@ const Transactions = () => {
     const [transactions, setTransactions] = useState([]);
 
     async function getPayments(){
-        const response = await api_payment.get('/');
+        const response = await api_payment.get('/transactions');
         setTransactions(response.data);
     }
 
