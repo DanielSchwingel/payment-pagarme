@@ -1,4 +1,4 @@
-.container-form {
+/* .container-form {
     display: flex;
     align-items: center;    
     justify-content: center;
@@ -15,7 +15,7 @@ h2 {
 label{
     font-family: 'Ubuntu';
     font-size: 16px;
-}
+} 
 
 input[type=text] {
     border-radius: 8px;
@@ -59,4 +59,4 @@ button {
 
 button:hover {
     background-color: #070817;
-}
+} */

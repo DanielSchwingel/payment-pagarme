@@ -13,34 +13,26 @@
 
 .modal .container {
     background-color: #FFF;
-    height: 80%;
-    width: 50%;
+    height: 400px;
+    width: 500px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     font-family: 'Ubuntu';
 }
 
-.modal .header {
+.modal .container .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.modal form label {
-    font-size: 12px;
-}
-
-.modal form input {
-    font-size: 12px;
 }
 
 .modal form .input-group {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.modal form button {
-    
+.modal form .input-group input {
+    margin-right: 25px;
 }
+

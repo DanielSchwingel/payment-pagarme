@@ -27,7 +27,7 @@ const Customer = () => {
             <Menu />
             <button onClick={()=> setIsVisibleModal(true)}>NOVO</button>
             <p>Lista de clientes já cadastrados:</p>
-            <table cellpadding='8px' cellSpacing='0px' >
+            <table cellPadding='8px' cellSpacing='0px' >
                 <thead>
                     <tr>
                         <th>ID Pagar.me</th>
