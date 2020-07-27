@@ -21,7 +21,7 @@ const Home = ( ) => {
                 </Link>
                 <Link className='card' to='/clientes'>
                     <FaUsers size={28} color='#FFF'/>  
-                    <p>Clientes</p>      
+                    <p>CLIENTES</p>      
                 </Link>
             </div>
             <Footer/>

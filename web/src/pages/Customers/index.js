@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 import Footer from '../../components/Footer';
+import ModalCustomer from '../../components/Modal';
 
 import api_payment from '../../services/api_payment';
 
 const Customer = () => {
     const [customers, setCustomers] = useState([]);
+    const [isVisibleModal, setIsVisibleModal] = useState(false);
     
     async function getCustomers(){
         const response = await api_payment.get('/customers');
@@ -20,8 +22,10 @@ const Customer = () => {
 
     return (
         <div className='box'>
+            {isVisibleModal ? <ModalCustomer onClose={() => setIsVisibleModal(false)}/> :  null}
             <Header title='Clientes com '/>
             <Menu />
+            <button onClick={()=> setIsVisibleModal(true)}>NOVO</button>
             <p>Lista de clientes já cadastrados:</p>
             <table cellpadding='8px' cellSpacing='0px' >
                 <thead>
