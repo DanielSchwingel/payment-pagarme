@@ -1,18 +1,44 @@
-import React, { useState } from 'react';
-import { FaTimes, FaCheck, FaArrowLeft } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react';
+import { FaTimes, FaCheck, FaArrowLeft } from 'react-icons/fa';
 
 import './styles.css';
+import api_payment from '../../services/api_payment';
 
-const ModalCustomer = ({onClose}) => {
+const ModalCustomer = ({onClose, id = '0'}) => {
     const [name, setName] = useState('');	
     const [email, setEmail] = useState('');	
     const [cpf, setCpf] = useState('');	
     const [phone, setPhone] = useState('');	
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault();
-        alert(`${name}, ${email},${cpf},${phone}`);
+        const data = {
+            name,
+            email,
+            cpf,
+            phone
+        };
+        await api_payment.post('/customer', data)
+            .then(response => {
+                alert(`Cliente ${response.data.external_id} - ${response.data.name} cadastrado com sucesso`);
+                onClose();
+            })
+            .catch(error => alert(`Ocorreu um erro: ${error}`));
     }
+
+    async function openCustomer(){
+        if (id !== 0) {
+            const response = await api_payment.get(`/customer/${id}`);
+            setName(response.data.name);
+            setEmail(response.data.email);
+            setCpf(response.data.documents[0].number);
+            setPhone(response.data.phone_numbers[0]);
+        } 
+    }
+    
+    useEffect(()=>{
+        openCustomer();
+    },[])
 
     return(
         <div className="modal">
@@ -64,10 +90,9 @@ const ModalCustomer = ({onClose}) => {
                             />
                         </div>
                     </div>
-                    <hr/>
                     <div className="buttons-form">
                         <div className="button-cancel" onClick={onClose}>
-                            <FaArrowLeft size={18} color='red' /> CANCELAR
+                            <FaArrowLeft size={18} color='red' />CANCELAR
                         </div>
                         <button className="button-save">
                             <FaCheck size={18} color='#FFF' onClick={onClose}/> SALVAR

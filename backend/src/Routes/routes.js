@@ -9,6 +9,7 @@ routes.post('/transaction', TransactionController.create);
 
 routes.get('/customers', CustomerController.index);
 routes.post('/customer', CustomerController.create);
+routes.get('/customer/:id', CustomerController.show);
 
 
 

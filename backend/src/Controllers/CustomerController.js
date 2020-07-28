@@ -1,4 +1,5 @@
 const pagarme = require('pagarme');
+const crypto = require('crypto');
 const { index } = require('./TransactionController');
 require('dotenv').config();
 
@@ -9,13 +10,21 @@ module.exports = {
             .then(customers => response.json(customers))
     },
 
+    async show(request, response){
+        const { id } = request.params;
+        pagarme.client.connect({ api_key: process.env.PAGARME_API_KEY_TEST })
+            .then(client => client.customers.find({ id: id }))
+            .then(customer => response.json(customer))
+            .catch(error => response.json(error));
+    },
+
     async create(request, response){  
-        const { id, name, email, cpf, phone} = request.body; 
+        const { name, email, cpf, phone} = request.body; 
         const pagarme = require('pagarme')
 
         pagarme.client.connect({ api_key: process.env.PAGARME_API_KEY_TEST })
             .then(client => client.customers.create({
-            external_id: id,
+            external_id: crypto.randomBytes(4).toString('HEX'),
             name: name,
             type: 'individual',
             country: 'br',
