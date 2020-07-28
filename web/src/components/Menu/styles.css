@@ -1,7 +1,7 @@
-.button {
+.container-menu .button {
     font-family: 'Ubuntu';
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     text-decoration: none;
     color: #070817;
     display: flex;
@@ -9,10 +9,10 @@
     transition: opacity 0.2s;
 }
 
-.button svg {
+.container-menu .button svg {
     margin-right: 15px;
 }
 
-.button:hover {
+.container-menu .button:hover {
     opacity: 0.8;
 }

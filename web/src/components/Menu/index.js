@@ -8,7 +8,7 @@ const Menu = () => {
     return (
         <div className='container-menu'>
             <Link to='/' className='button'>
-                <FaArrowLeft size={20} color='#65a300' />
+                <FaArrowLeft size={15} color='#65a300' />
                  Voltar ao Início
             </Link>
         </div>

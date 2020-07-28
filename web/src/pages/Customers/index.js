@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 import Footer from '../../components/Footer';
-import ModalCustomer from '../../components/Modal';
+import ModalCustomer from '../../components/Modal/Customers';
 
 import api_payment from '../../services/api_payment';
 
@@ -33,7 +33,9 @@ const Customer = () => {
             {isVisibleModal ? <ModalCustomer id={id_customer} onClose={() => setIsVisibleModal(false)}/> :  null}
             <Header title='Clientes com '/>
             <Menu />
-            <button onClick={()=> openCustomer(0)}>NOVO</button>
+            <div className="buttons-grid">
+                <button onClick={()=> openCustomer(0)}>NOVO</button>
+            </div>
             <p>Lista de clientes já cadastrados:</p>
             <table cellPadding='8px' cellSpacing='0px' >
                 <thead>

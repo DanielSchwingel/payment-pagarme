@@ -7,6 +7,13 @@ body {
   padding: 30px;
 }
 
+p {
+  font-family: 'Ubuntu';
+  font-size: 14px;
+  font-weight: 500;
+  color: #070817;
+}
+
 .box{
   background-color: #FFF;
   border-radius: 12px;
@@ -84,4 +91,41 @@ button {
 
 .buttons-form .button-cancel:hover {
   opacity: .75;
+}
+
+table {
+  width: 100%;
+  font-family: 'Ubuntu';
+  font-size: 14px;
+}
+
+thead {
+  color: #070817;
+  background-color: #65a300;
+}
+tbody {
+  text-align: center;
+}
+
+tfoot{
+  text-align: center;
+  background-color: red;
+}
+
+.buttons-grid {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 15px 0px;
+}
+
+.buttons-grid button {
+  background-color: #65a300;
+  color: #070817;
+  border-radius: 12px;
+  height: 40px;
+  border:none;
+  width: 90px;
+  font-weight: 700;
+  margin-right: 10px;
 }

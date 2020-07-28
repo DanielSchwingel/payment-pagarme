@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaTimes, FaCheck, FaArrowLeft } from 'react-icons/fa';
 
 import './styles.css';
-import api_payment from '../../services/api_payment';
+import api_payment from '../../../services/api_payment';
 
 const ModalCustomer = ({onClose, id = '0'}) => {
     const [name, setName] = useState('');	
